@@ -60,6 +60,7 @@ export class TableViewComponent implements OnInit {
   populateTableDataArray(data : HomeData) {
     let stepName = "";
     let type = "";
+    let tabled = [];
     for (let index = 1; index <= this.totalModule; index++) {
       if (index <= data.partSize) {
         stepName = 'I' + index;
@@ -84,11 +85,12 @@ export class TableViewComponent implements OnInit {
         editorPos: 0,
         tablePos: []
       }
-      //this.tabledata = [...this.tabledata, data1]
-      this.tabledata = this.tabledata.concat(d);
-      this.cdr.detectChanges();
-    }
+      //this.tabledata = [...this.tabledata, d]
 
+      tabled.push(d);
+      //this.cdr.detectChanges();
+    }
+    this.tabledata = tabled;
     console.log(this.tabledata)
   }
 
