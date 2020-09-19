@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.align-center-locally {
+  text-align: center;
+}
+
+.align-right-locally {
+  text-align: right;
+}
+
+.valign-middle-locally {
+  vertical-align: middle !important;
+}

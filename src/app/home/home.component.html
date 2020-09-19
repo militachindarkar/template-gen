@@ -1,0 +1,47 @@
+<div class="container">
+
+  <form class="justify-content-center align-center-locally" [formGroup]="homeFormGroup" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-info" [ngClass]="{'active': homeData.fillAnswer === 'wfa'}">
+            <input type="radio" name="fillAnswer" id="wfa" value="wfa" [checked]="true" formControlName="fillAnswer" #fa1 (change)="changeFAToggle($event,fa1.value)"> With Fill-Answer
+          </label>
+          <label class="btn btn-info" [ngClass]="{'active': homeData.fillAnswer === 'wofa'}">
+            <input type="radio" name="fillAnswer" id="wofa" value="wofa" formControlName="fillAnswer" #fa2 (change)="changeFAToggle($event,fa2.value)"> Without Fill-Answer
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-md-3"></div>
+      <div class="col-md-3 my-1">
+        <label  class="form-check-label">No. of Question Parts:</label>
+      </div>
+      <div class="col-md-3 my-1">
+        <label  class="form-check-label">No. of Guided Solutions:</label>
+      </div>
+      <div class="col-auto my-1"></div>
+    </div>
+    <div class="row mb-2 align-items-center">
+      <div class="col-md-3 align-items-right my-1 align-right-locally">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="accCheck" formControlName="accessible" >
+          <label class="form-check-label" for="accCheck">
+            Accessible
+          </label>
+        </div>
+      </div>
+      <div class="col-md-3 my-1">
+        <input type="number" min="0" class="form-control" placeholder="No. of Question Parts" formControlName="partSize">
+      </div>
+      <div class="col-md-3 my-1">
+        <input type="number" min="0" class="form-control" placeholder="No. of Guided Solutions" formControlName="gsSize">
+      </div>
+      <div class="col-auto my-1">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+<app-table-view></app-table-view>
